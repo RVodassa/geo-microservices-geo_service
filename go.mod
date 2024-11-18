@@ -1,4 +1,4 @@
-module github.com/RVodassa/grpc_geoservice
+module github.com/RVodassa/geo-microservices-geo_service
 
 go 1.23.3
 

@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/RVodassa/grpc_geoservice/internal/domain/entity"
+	"github.com/RVodassa/geo-microservices-geo_service/internal/domain/entity"
 	"log"
 	"net/url"
 

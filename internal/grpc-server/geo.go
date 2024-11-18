@@ -3,8 +3,8 @@ package grpc_server
 import (
 	"context"
 	"fmt"
-	"github.com/RVodassa/grpc_geoservice/internal/service"
-	"github.com/RVodassa/grpc_geoservice/proto/generated"
+	"github.com/RVodassa/geo-microservices-geo_service/internal/service"
+	"github.com/RVodassa/geo-microservices-geo_service/proto/generated"
 )
 
 // Server - структура, реализующая gRPC интерфейс

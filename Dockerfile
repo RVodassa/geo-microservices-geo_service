@@ -15,7 +15,7 @@ RUN go mod download
 COPY . .
 
 # Собираем приложение
-RUN go build -o geo-service ./cmd/main.go
+RUN go build -o grpc_geo-service ./cmd/main.go
 
 # Начинаем новую стадию на основе минимального образа
 FROM alpine:latest

@@ -1,9 +1,9 @@
 package main
 
 import (
-	grpc2 "github.com/RVodassa/grpc_geoservice/internal/grpc-server"
-	"github.com/RVodassa/grpc_geoservice/internal/service"
-	pb "github.com/RVodassa/grpc_geoservice/proto/generated"
+	grpc2 "github.com/RVodassa/geo-microservices-geo_service/internal/grpc-server"
+	"github.com/RVodassa/geo-microservices-geo_service/internal/service"
+	pb "github.com/RVodassa/geo-microservices-geo_service/proto/generated"
 	"github.com/joho/godotenv"
 	"google.golang.org/grpc"
 	_ "google.golang.org/grpc/codes"

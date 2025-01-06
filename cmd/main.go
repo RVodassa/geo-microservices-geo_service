@@ -19,11 +19,11 @@ func main() {
 		log.Println("Ошибка загрузки .env файла")
 	}
 
-	ApiKey, SecretKey := os.Getenv("apiKey"), os.Getenv("secretKey")
+	ApiKey, SecretKey, port := os.Getenv("API_KEY"), os.Getenv("SECRET_KEY"), os.Getenv("GEO_PORT")
 
 	geoService := service.NewGeoService(ApiKey, SecretKey)
 
-	lis, err := net.Listen("tcp", ":30303")
+	lis, err := net.Listen("tcp", ":"+port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
@@ -31,8 +31,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterGeoServiceServer(grpcServer, grpc2.NewServer(geoService))
 
-	log.Println("gRPC server is running on port ")
-	if err := grpcServer.Serve(lis); err != nil {
+	if err = grpcServer.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
 }

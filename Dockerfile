@@ -15,13 +15,13 @@ RUN go mod download
 COPY . .
 
 # Собираем приложение
-RUN go build -o grpc_geo-service ./cmd/main.go
+RUN go build -o geoService-service ./cmd/main.go
 
 # Начинаем новую стадию на основе минимального образа
 FROM alpine:latest
 
 # Копируем исполняемый файл из первой стадии
-COPY --from=builder /app/geo-service /geo-service
+COPY --from=builder /app/geoService-service /geoService-service
 
 # Копируем .env файл, если приложение использует его
 COPY .env /app/.env
@@ -30,4 +30,4 @@ COPY .env /app/.env
 EXPOSE 30303
 
 # Запускаем приложение
-CMD ["./geo-service"]
+CMD ["./geoService-service"]
